@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Router from "./routes/Router";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import configureStore from "./redux/store";
@@ -15,11 +15,11 @@ const render = Component => {
     document.getElementById("root")
   );
 };
-render(App);
+render(Router);
 
 if (module.hot) {
-  module.hot.accept("./App", () => {
-    const NextApp = require("./App").default;
+  module.hot.accept("./routes/Router", () => {
+    const NextApp = require("./routes/Router").default;
     render(NextApp);
   });
 }
